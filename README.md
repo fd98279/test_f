@@ -47,3 +47,9 @@ Ran 12 tests in 0.001s
 
 OK
 ```
+
+# CI/CD
+
+## Travis integration
+
+The repo is intergrated with travis, at the commit page: https://github.com/fd98279/test_f/commits/master travis should display build status
