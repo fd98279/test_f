@@ -38,7 +38,9 @@ CONVERTORS = {
     'cu2li' : converters.cu2li,
     'cu2ts' : converters.cu2ts,
     'cu2ci' : converters.cu2ci,
-    'cf2cf' : converters.cf2cf,
+    'cu2cf' : converters.cu2cf,
+    'cu2ga' : converters.cu2ga,
+    'cf2cu' : converters.cf2cu,
     'cf2ga' : converters.cf2ga,
     'ga2li' : converters.ga2li,
     'ga2ts' : converters.ga2ts,
@@ -85,7 +87,8 @@ if __name__ == '__main__':
 
     # Validate units are of same type
     if not (set([args.input_uom, args.target_uom]).issubset(set(TEMPERATURE_UNITS)) or set([args.input_uom, args.target_uom]).issubset(set(VOLUME_UNITS))):
-        raise ValueError('input_uom {0} and target_uom {1} should be of same type'.format(args.input_uom, args.target_uom))
+        msg = 'input_uom {0} and target_uom {1} should be of same type'.format(args.input_uom, args.target_uom)
+        raise ValueError(msg)
 
     if round(unit_convertor(args.input_value, args.input_uom, args.target_uom), 1) == round(args.student_value, 1):
         print('correct')

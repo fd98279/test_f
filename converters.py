@@ -79,7 +79,7 @@ def ts2cu(x):
     return  x * 0.0625
 
 def ts2cf(x):
-    return  x * 0.00052219
+    return  x * 0.000522
 
 def ts2ga(x):
     return  x * 0.00390625
@@ -99,6 +99,8 @@ def ci2cf(x):
 def ci2ga(x):
     return  x * 0.004329
 
+VOLUME_UNITS = ['li', 'ts', 'ci', 'cu', 'cf', 'ga']
+
 def cu2li(x):
     return  x * 0.236588
 
@@ -108,8 +110,14 @@ def cu2ts(x):
 def cu2ci(x):
     return  x * 14.4375
 
-def cf2cf(x):
+def cu2cf(x):
     return  x * 0.00835503
+
+def cu2ga(x):
+    return  x * 0.0624999646753250024
+
+def cf2cu(x):
+    return  x * 119.688312
 
 def cf2ga(x):
     return  x * 0.0625
@@ -124,7 +132,7 @@ def ga2ci(x):
     return  x * 231
 
 def ga2cu(x):
-    return  x * 16
+    return  x * 15.7725
 
 def ga2cf(x):
     return  x * 0.133681
