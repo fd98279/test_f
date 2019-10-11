@@ -20,7 +20,31 @@ CONVERTORS = {
     'r2k' : converters.r2k,
     'r2c' : converters.r2c,
     'r2f' : converters.r2f,
-
+    'li2ts' : converters.li2ts,
+    'li2ci' : converters.li2ci,
+    'li2cu' : converters.li2cu,
+    'li2cf' : converters.li2cf,
+    'li2ga' : converters.li2ga,
+    'ts2li' : converters.ts2li,
+    'ts2ci' : converters.ts2ci,
+    'ts2cu' : converters.ts2cu,
+    'ts2cf' : converters.ts2cf,
+    'ts2ga' : converters.ts2ga,
+    'ci2li' : converters.ci2li,
+    'ci2ts' : converters.ci2ts,
+    'ci2cu' : converters.ci2cu,
+    'ci2cf' : converters.ci2cf,
+    'ci2ga' : converters.ci2ga,
+    'cu2li' : converters.cu2li,
+    'cu2ts' : converters.cu2ts,
+    'cu2ci' : converters.cu2ci,
+    'cf2cf' : converters.cf2cf,
+    'cf2ga' : converters.cf2ga,
+    'ga2li' : converters.ga2li,
+    'ga2ts' : converters.ga2ts,
+    'ga2ci' : converters.ga2ci,
+    'ga2cu' : converters.ga2cu,
+    'ga2cf' : converters.ga2cf,
 }
 
 def unit_convertor(input_value, input_uom, target_uom):
@@ -28,8 +52,12 @@ def unit_convertor(input_value, input_uom, target_uom):
         Converts from one UOM to other
         Returns float. converted value
     '''
+    key = "{0}2{1}".format(input_uom, target_uom)
+    if key in CONVERTORS:
+        return CONVERTORS[key](input_value)
+    else:
+        raise NotImplementedError("Unit conversion {0} not support".format(key))
 
-    return CONVERTORS["{0}2{1}".format(input_uom, target_uom)](input_value)
 
 if __name__ == '__main__':
     '''
@@ -46,8 +74,6 @@ if __name__ == '__main__':
         support a peer code review process and seamless app deployment
         when a commit is merged to trunk.
     '''
-
-
 
     parser = argparse.ArgumentParser(description='Unit Conversion.')
     parser.add_argument('-i', '--input_value', type=float, help='Input numerical value')
