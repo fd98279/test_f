@@ -31,11 +31,19 @@ optional arguments:
 ## Test provided example scenarios
 ```bash
 $ ./test.sh
+correct
 incorrect
-incorrect
+correct
+Traceback (most recent call last):
+  File "main.py", line 91, in <module>
+    raise ValueError(msg)
+ValueError: input_uom ga and target_uom k should be of same type
 usage: main.py [-h] [-i INPUT_VALUE] [-u {k,c,f,r,li,ts,ci,cu,cf,ga}]
                [-t {k,c,f,r,li,ts,ci,cu,cf,ga}] [-s STUDENT_VALUE]
 main.py: error: argument -s/--student_value: invalid float value: 'dog'
+usage: main.py [-h] [-i INPUT_VALUE] [-u {k,c,f,r,li,ts,ci,cu,cf,ga}]
+               [-t {k,c,f,r,li,ts,ci,cu,cf,ga}] [-s STUDENT_VALUE]
+main.py: error: unrecognized arguments: dog
 ```
 
 ## Run unit tests
