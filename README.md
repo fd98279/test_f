@@ -49,11 +49,9 @@ main.py: error: unrecognized arguments: dog
 ## Run unit tests
 ```bash
 $ python -m unittest discover -s ./ -p "*_test.py"
-............
+..................................
 ----------------------------------------------------------------------
-Ran 12 tests in 0.001s
-
-OK
+Ran 34 tests in 0.003s
 ```
 
 # CI/CD
